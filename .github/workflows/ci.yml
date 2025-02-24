@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: 15
         cache: 'npm'
-        cache-dependency-path: codebase/rdicir-0.1.0/package-lock.json
+        cache-dependency-path: codebase/rdicidr-0.1.0/package-lock.json
     
     - name: Execute code
       working-directory: codebase/rdicidr-0.1.0
