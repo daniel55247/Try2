@@ -95,6 +95,10 @@ jobs:
           task-definition: ./task-definition.json
           container-name: app-container  # Change to your container name
           image: ghcr.io/daniel55247/try2/imagefstry2:latest
+      
+      - name: Debug Task Definition Output
+        run: |
+          echo "Task Definition ARN: ${{ steps.task-def.outputs.task-definition-arn }}"
 
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
