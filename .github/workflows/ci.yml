@@ -93,16 +93,12 @@ jobs:
           task-definition: ./task-definition.json
           container-name: app-container  # Change to your container name
           image: ghcr.io/daniel55247/try2/imagefstry2:latest
-      
-      - name: Get Task Definition ARN manually
-        run: |
-          aws ecs list-task-definitions --region us-east-2 --query "taskDefinitionArns[-1]" --output text
-
-      - name: Deploy to ECS
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        
+      - name: Deploy to Amazon ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
-          cluster: testCluster
+          task-definition: task-definition.json
           service: test-service
-          task-definition: "arn:aws:ecs:us-east-2:774305593614:task-definition/fargate-task-definition:1"
+          cluster: testCluster
           wait-for-service-stability: true
 
