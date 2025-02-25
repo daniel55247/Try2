@@ -3,7 +3,7 @@
        { 
           "essential": true,
           "image": "ghcr.io/daniel55247/try2/imagefstry2:latest",
-          "name": "sample-fargate-app",
+          "name": "app-container",
           "portMappings": [ 
              { 
                 "containerPort": 80,
