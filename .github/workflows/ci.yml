@@ -103,6 +103,6 @@ jobs:
         with:
           cluster: testCluster
           service: test-service
-          task-definition: ${{ steps.task-def.outputs.task-definition-arn }}
+          task-definition: arn:aws:ecs:us-east-2:774305593614:task-definition/fargate-task-definition:1
           wait-for-service-stability: true
 
