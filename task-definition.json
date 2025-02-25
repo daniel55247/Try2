@@ -1,0 +1,24 @@
+{
+    "containerDefinitions": [ 
+       { 
+          "essential": true,
+          "image": "ghcr.io/daniel55247/try2/imagefstry2:latest",
+          "name": "sample-fargate-app",
+          "portMappings": [ 
+             { 
+                "containerPort": 80,
+                "hostPort": 80,
+                "protocol": "tcp"
+             }
+          ]
+       }
+    ],
+    "cpu": "256",
+    "executionRoleArn": "arn:aws:ecs:us-east-2:774305593614:cluster/testCluster",
+    "family": "fargate-task-definition",
+    "memory": "512",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [ 
+        "FARGATE" 
+     ]
+ }

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
+  name: fschallengeapp
+  namespace: production
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: fschallengeapp
   template:
     metadata:
       labels:
-        app: nginx
+        app: fschallengeapp
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+        - name: mi-aplicacion
+          image: ghcr.io/daniel55247/try2/imagefstry2:latest
+          ports:
+            - containerPort: 8080
+          command: [ "nginx", "-g", "daemon"]
