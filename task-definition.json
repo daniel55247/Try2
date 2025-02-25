@@ -14,7 +14,7 @@
        }
     ],
     "cpu": "256",
-    "executionRoleArn": "arn:aws:iam::774305593614:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+    "executionRoleArn": "arn:aws:iam::774305593614:role/ecsTaskExecutionRole",
     "family": "fargate-task-definition",
     "memory": "512",
     "networkMode": "awsvpc",
