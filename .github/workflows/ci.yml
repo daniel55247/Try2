@@ -77,7 +77,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug Task Definition JSON
-        run: cat task-definition.json
+        run: cat ./task-definition.json
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -103,6 +103,6 @@ jobs:
         with:
           cluster: testCluster
           service: test-service
-          task-definition: arn:aws:ecs:us-east-2:774305593614:task-definition/fargate-task-definition:1
+          task-definition: "arn:aws:ecs:us-east-2:774305593614:task-definition/fargate-task-definition:1"
           wait-for-service-stability: true
 
