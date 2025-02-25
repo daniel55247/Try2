@@ -68,6 +68,7 @@ jobs:
           docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/imagefstry2:latest
 
   approve-deploy:
+    needs: [buildimage]
     runs-on: ubuntu-latest
     steps:
       - name: Esperando Aprobación Manual
@@ -78,7 +79,7 @@ jobs:
   deploy:
     name: Deploy to AWS ECS
     runs-on: ubuntu-latest
-    needs: [buildimage]
+    needs: [approve-deploy]
 
     steps:
       - name: Checkout Code
