@@ -14,8 +14,8 @@ spec:
         app: fschallengeapp
     spec:
       containers:
-        - name: mi-aplicacion
+        - name: fscontainer
           image: ghcr.io/daniel55247/try2/imagefstry2:latest
           ports:
             - containerPort: 8080
-          command: [ "nginx", "-g", "daemon"]
+          command: [ "nginx", "-g", "daemon off;"]
