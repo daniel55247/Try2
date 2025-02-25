@@ -64,5 +64,5 @@ jobs:
         working-directory: codebase/rdicidr-0.1.0
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u daniel55247 --password-stdin
-          docker build -t ghcr.io/${{ github.actor }}/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
-          docker push -t ghcr.io/${{ github.actor }}/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
+          docker build -t ${{ github.actor }}/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
+          docker push -t ${{ github.actor }}/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest .
