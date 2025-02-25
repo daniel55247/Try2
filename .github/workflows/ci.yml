@@ -76,10 +76,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: check repository
-        run:  |
-          ls -la
-          pwd
+      - name: Debug Task Definition JSON
+        run: cat task-definition.json
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
