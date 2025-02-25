@@ -72,9 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Esperando Aprobación Manual
-        uses: hmarr/auto-approve-action@v3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "Esperando aprobación en la interfaz de GitHub Actions"
   
   deploy:
     name: Deploy to AWS ECS
